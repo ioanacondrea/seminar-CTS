@@ -10,7 +10,6 @@ public class Girafa extends Animal{
 	}
 
 	
-	
 	public Girafa(String nume, int inaltime) {
 		super(nume);
 		this.inaltime = inaltime;
@@ -24,6 +23,13 @@ public class Girafa extends Animal{
 
 	public void setInaltime(int inaltime) {
 		this.inaltime = inaltime;
+	}
+
+
+	@Override
+	public void merge() {
+		System.out.println("Girafa merge cu capul pe sus.");
+		
 	}
 	
 

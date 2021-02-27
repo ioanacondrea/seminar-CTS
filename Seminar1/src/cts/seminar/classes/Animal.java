@@ -1,6 +1,6 @@
 package cts.seminar.classes;
 
-public abstract class Animal {
+public abstract class Animal implements Mers{
 
 	private String nume;
 	
