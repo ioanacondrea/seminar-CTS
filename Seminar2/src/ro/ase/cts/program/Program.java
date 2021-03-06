@@ -3,18 +3,20 @@ package ro.ase.cts.program;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
-import ro.ase.cts.clase.Utils;
 import ro.ase.cts.readers.ReaderAngajat;
-import ro.ase.cts.readers.ReaderElev;
+import ro.ase.cts.readers.ReaderAplicanti;
 
 public class Program {
 
+	public static List<Aplicant> citesteAplicanti(ReaderAplicanti reader) throws FileNotFoundException{
+		return reader.readAplicant();
+	}
+	
 	public static void main(String[] args) {
 		List<Aplicant> listaAplicant;
 		try {
-			listaAplicant = ReaderElev.readPupil("elevi.txt");
+			listaAplicant = citesteAplicanti(new ReaderAngajat("angajati.txt"));
 			for(Aplicant angajat:listaAplicant)
 				System.out.println(angajat.toString());
 		} catch (FileNotFoundException e) {
