@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import ro.ase.cts.clase.Aplicant;
+import ro.ase.cts.clase.Proiect;
 import ro.ase.cts.readers.ReaderAngajat;
 import ro.ase.cts.readers.ReaderAplicanti;
 
@@ -13,14 +14,20 @@ public class Program {
 		return reader.readAplicant();
 	}
 	
+	public static void afiseazaAplicanti (List<Aplicant> aplicanti) {
+		Proiect proiect = new Proiect(80);
+		for(Aplicant aplicant:aplicanti){
+			System.out.println(aplicant.toString());
+			aplicant.afisareSumaFinantata();
+			aplicant.afiseazaStatusPeProiect(proiect);
+		}
+	}
+	
 	public static void main(String[] args) {
-		List<Aplicant> listaAplicant;
+		List<Aplicant> listaAplicanti;
 		try {
-			listaAplicant = citesteAplicanti(new ReaderAngajat("angajati.txt"));
-			for(Aplicant aplicant:listaAplicant){
-				System.out.println(aplicant.toString());
-				aplicant.afisareSumaFinantata();
-			}
+			listaAplicanti = citesteAplicanti(new ReaderAngajat("angajati.txt"));
+			afiseazaAplicanti(listaAplicanti);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
