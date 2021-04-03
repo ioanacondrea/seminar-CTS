@@ -11,6 +11,13 @@ public class Main {
 		System.out.println(rezervare.toString());
 		System.out.println(rezervare2.toString());
 		System.out.println(rezervare3.toString());
+		
+		RezervareBuilderV2  rezBuilder = new RezervareBuilderV2();
+		rezBuilder.setAreMancareInclusa(true).setAreBauturaInlcusa(true).setAreScaunErgonomic(true);
+		Rezervare rez1 = rezBuilder.setCod(12).build();
+		Rezervare rez2 = rezBuilder.setCod(13).build();
 
+		System.out.println(rez1.toString());
+		System.out.println(rez2.toString());
 }
 }
