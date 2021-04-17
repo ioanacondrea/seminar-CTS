@@ -9,6 +9,7 @@ public class Main {
 		Filiala f2 = new Filiala("f2");
 		Filiala f3 = new Filiala("f3");
 		
+		
 		try {
 			a1.adaugaSediu(f1);
 			a2.adaugaSediu(f2);
