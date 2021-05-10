@@ -1,3 +1,4 @@
+
 package ro.ase.cts.adapter;
 
 public interface BiletOnline {
