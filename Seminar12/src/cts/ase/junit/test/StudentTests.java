@@ -70,4 +70,32 @@ public class StudentTests {
         assertFalse(student.areRestante());
     }
 
+    @Test
+    public void testSetNume(){
+        Student student = new Student();
+        String nume ="Ioana";
+        student.setNume(nume);
+        assertEquals(nume, student.getNume());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testGetNotAruncaExceptie(){
+        Student student = new Student();
+        student.getNota(-1);
+
+    }
+
+    public void testGetNotAruncaExceptieJU3(){
+        Student student = new Student();
+        try{
+            student.getNota(-1);
+            fail("Metoda nu arunca exceptie");
+        }catch (IndexOutOfBoundsException indexOutOfBoundsException){
+
+        }
+        catch (Exception ex){
+            fail("Metoda nu arunca exceptia indexOutOfBoundsException");
+        }
+    }
+
 }

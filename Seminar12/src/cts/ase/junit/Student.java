@@ -37,7 +37,8 @@ public class Student {
         if(index>=0 && index< note.size()){
             return note.get(index);
         }
-        throw new IndexOutOfBoundsException();
+        //throw new IndexOutOfBoundsException();
+        throw new IllegalArgumentException();
     }
 
     public float calculeazaMedie(){
